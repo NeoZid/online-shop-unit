@@ -11,10 +11,6 @@ import org.junit.Test;
  */
 public class SalesItemTest
 {
-    /*
-     * 14) CommentTest, void setUp, void tearDown,
-     * 
-     */
     
     /**
      * Default constructor for test class SalesItemTest
@@ -90,7 +86,20 @@ public class SalesItemTest
         SalesItem salesIte1 = new SalesItem("Brain Surgery for Dummies.", 9899);
         assertEquals(true, salesIte1.addComment("Fred", "Great - I perform brain surgery every week now!", 4));
     }
+
+    @Test
+    public void negativeRatingTest()
+    {
+        SalesItem salesIte1 = new SalesItem("asd", 10);
+        assertEquals(false, salesIte1.addComment("asd", "test1", 0));
+        assertEquals(true, salesIte1.addComment("Asd", "test2", 1));
+        assertEquals(false, salesIte1.addComment("Asd", "test3", -1));
+    }
+    
+    
 }
+
+
 
 
 

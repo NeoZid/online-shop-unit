@@ -14,6 +14,14 @@ import java.util.Iterator;
  */
 public class SalesItem
 {
+    /*
+     * 14) void setUp, void tearDown,
+     * 17) ShowSource
+     * 18)
+     * 
+     */
+    
+    
     private String name;
     private int price;  // in cents
     private ArrayList<Comment> comments;
@@ -147,7 +155,8 @@ public class SalesItem
      */
     private boolean ratingInvalid(int rating)
     {
-        return rating < 0 || rating > 5;
+        // #16
+        return rating < 1 || rating > 5;
     }
     
     /**

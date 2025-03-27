@@ -39,4 +39,15 @@ public class CommentTest
     public void tearDown()
     {
     }
+
+    @Test
+    
+    // 18
+    public void checkAuthorRating()
+    {
+        Comment comment3 = new Comment("Neo", "le best", 5);
+        assertEquals("Neo", comment3.getAuthor());
+        assertEquals(5, comment3.getRating());
+    }
 }
+
