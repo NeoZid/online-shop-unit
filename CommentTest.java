@@ -49,5 +49,23 @@ public class CommentTest
         assertEquals("Neo", comment3.getAuthor());
         assertEquals(5, comment3.getRating());
     }
+    
+    // 18.5
+    @Test
+    public void testUpvoteDownvote()
+    {
+        Comment comment1 = new Comment("neo", "what it do", 8);
+        comment1.upvote();
+        comment1.upvote();
+        assertEquals(2, comment1.getVoteCount());
+        comment1.downvote();
+        comment1.downvote();
+        comment1.downvote();
+        assertEquals(-1, comment1.getVoteCount());
+    }
+    
+    
 }
+
+
 

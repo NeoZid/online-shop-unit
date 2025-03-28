@@ -97,7 +97,20 @@ public class SalesItemTest
     }
     
     
+    // 19
+    @Test
+    public void testFindMostHelpfulComment()
+    {
+        SalesItem salesIte2 = new SalesItem("Chocolate", 3);
+        assertEquals(true, salesIte2.addComment("M&M's", "Best choco in world", 5));
+        salesIte2.upvoteComment(0);
+        assertEquals(true, salesIte2.addComment("Dairymilk", "best milk choco in world", 4));
+        salesIte2.upvoteComment(1);
+        salesIte2.upvoteComment(0);
+        assertNotNull(salesIte2.findMostHelpfulComment());
+    }
 }
+
 
 
 
