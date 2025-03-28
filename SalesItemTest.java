@@ -95,8 +95,6 @@ public class SalesItemTest
         assertEquals(true, salesIte1.addComment("Asd", "test2", 1));
         assertEquals(false, salesIte1.addComment("Asd", "test3", -1));
     }
-    
-    
     // 19
     @Test
     public void testFindMostHelpfulComment()
@@ -109,7 +107,24 @@ public class SalesItemTest
         salesIte2.upvoteComment(0);
         assertNotNull(salesIte2.findMostHelpfulComment());
     }
+    
+    
+    // #20
+    @Test
+    public void testAll()
+    {
+        SalesItem salesIte1 = new SalesItem("Choco", 10);
+        assertEquals(true, salesIte1.addComment("Neo", "it good", 5));
+        salesIte1.showInfo();
+        assertEquals("Choco", salesIte1.getName());
+        assertEquals(10, salesIte1.getPrice());
+        salesIte1.removeComment(0);
+        assertEquals(true, salesIte1.addComment("Neo", "it really good good", 5));
+        assertEquals("Choco", salesIte1.getName());
+    }
 }
+
+
 
 
 
